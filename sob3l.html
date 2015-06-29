@@ -1,0 +1,112 @@
+<head>
+    <script type="text/javascript" src="picture.js"></script>
+    <script type="text/javascript" src="sob3l.js"></script>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+
+    </head>
+    <body>
+        <canvas id="myCanvas" width="640" height="640" style="background-color:FFFFF; "></canvas>
+
+
+        <select id="dropDownListPictures" onchange="pickPicture(this)">
+          <option value="chicago2">Chicago 2</option>
+          <option value="chicago1">Chicago 1</option>
+          <option value="david">david</option>
+          <option value="sanfran">sanfran</option>
+          <option value="bird">bird</option>
+          <option value="spacex1">Spacex 1</option>
+          <option value="spacex2">Spacex 2</option>
+          <option value="spacex3">Spacex 3</option>
+          <option value="spacex4">Spacex 4</option>
+          <option value="spacex5">Spacex 5</option>
+        </select>
+
+        <button class="button"  onclick="Sob3l()">Edge Detection</button>
+
+        <script>
+
+
+        var MASKX = [];
+        var MASKY = [];
+
+        var PictureArray = [];
+
+        for (var i = 0; i < 3; i++) {
+            MASKX[i] = new Array(3);
+            MASKY[i] = new Array(3);
+        };
+        /* 
+            Gx
+        */
+        MASKX[0][0] = -1; MASKX[0][1] = 0; MASKX[0][2] = 1;
+        MASKX[1][0] = -2; MASKX[1][1] = 0; MASKX[1][2] = 2;
+        MASKX[2][0] = -1; MASKX[2][1] = 0; MASKX[2][2] = 1;
+        /* 
+            Gy
+        */
+        MASKY[0][0] = 1; MASKY[0][1] = 2; MASKY[0][2] = 1;
+        MASKY[1][0] = 0; MASKY[1][1] = 0; MASKY[1][2] = 0;
+        MASKY[2][0] = -1; MASKY[2][1] = -2; MASKY[2][2] = -1;
+
+
+        function animate(canvas, context,startTime) {
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            var imageWidth  = image.width*2;
+            var imageHeight = image.height;
+
+            PictureArray =[];
+
+            for (var i = 0; i < image.height; i++) {
+                PictureArray[i] = new Array(image.width);
+            };
+
+            canvas.width = imageWidth;
+            canvas.height = imageHeight;
+            context.drawImage(image, 0, 0);
+            var imageData = context.getImageData(0, 0, imageWidth, imageHeight);
+            var data = imageData.data;
+
+            /* Gray Scale the image*/
+            for(var y = 0; y < imageHeight; y++) {
+              for(var x = 0; x < imageWidth; x++) {
+
+                var red = data[((imageWidth * y) + x) * 4];
+                var green = data[((imageWidth * y) + x) * 4 + 1];
+                var blue = data[((imageWidth * y) + x) * 4 + 2];
+                var gray = (0.2126*red + 0.7152*blue + 0.0722*blue);
+
+                data[((imageWidth * y) + x) * 4]     = gray;
+                data[((imageWidth * y) + x) * 4 + 1] = gray;
+                data[((imageWidth * y) + x) * 4 + 2] = gray;
+
+                PictureArray[y][x] = gray;
+              }
+            }
+            imageData.data = data;
+            context.putImageData(imageData, 0, 0 );
+            context.drawImage(image, image.width, 0);
+        }
+
+
+        var image = new Image();
+        image.src = "chicago_2.jpg";
+
+
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        var startTime = (new Date()).getTime();
+
+        image.onload = function(){
+            animate(canvas, context, startTime);
+
+        }
+
+        // for (var i = 0; i <= 255; i+=10) {
+        //     console.log("new pixel(0,"+i+", 0)");
+        // };
+
+          </script>
+</body>

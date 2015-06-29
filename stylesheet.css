@@ -1,0 +1,95 @@
+
+#dropDownListPictures{
+	display: block;
+	top: 25px;
+	position: relative;
+}
+
+#dropDownListPalettes{
+	display: block;
+	top: 25px;
+	position: relative;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400);
+
+.button{
+	position: relative;
+	font-family: 'Alegreya Sans SC';
+	font-weight: 200;
+	font-size: 12px;
+	width: 125px;
+	height: 25px;
+	border: none; 
+	text-align: center;
+	text-decoration: none;
+	color: #ecf0f1;
+	font-weight: 200;
+	font-size: 13px;
+	cursor: pointer;
+	outline: 0;
+	top: 5px;
+	left: 125px;
+	opacity: 1;
+
+	background-color:#2c3e50;
+	
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+
+	transition: background-color .25s ease-in-out;
+	-moz-transition: background-color .25s ease-in-out;
+	-webkit-transition: background-color .25s ease-in-out;
+	border-radius: 6px;
+}
+
+#buttons{
+	top: 0px;
+	position: relative;
+	display: inline-block;
+	width: 75px;
+	height: 400px;
+}
+
+.button:active{
+	transition: all 0.1s ease-in-out;
+ 	-ms-transform: scale(0.80,0.80); 
+	-webkit-transform: scale(0.80,0.80);
+	transform: scale(0.80,0.80);
+}
+.button:hover{
+	background-color: rgba(231, 76, 60, 0.8);
+}
+
+/*
+	BG:Turquoise - #1abc9c  rgb(26, 188, 156)
+	B:Green Sea - #16a085   rgb(22, 160, 133)
+	
+	Emerald - #2ecc71		rgb(46, 204, 113)
+	Nephritis - #27ae60		rgb(39, 174, 96)
+
+	Peter River - #3498db	rgb(52, 152, 219)
+	Belize Hole - #2980b9	rgb(41, 128, 185)
+
+	Amethyst - #9b59b6		rgb(155, 89, 182)
+	Wisteria - #8e44ad		rgb(142, 68, 173)
+
+	Wet Asphalt - #34495e	rgb(52, 73, 94)
+	Midnight Blue - #2c3e50 rgb(44, 62, 80)
+
+	Sun Flower - #f1c40f	rgb(241, 196, 15)
+	Orange - #f39c12		rgb(243, 156, 18)
+		
+	Carrot - #e67e22		rgb(230, 126, 34)
+	Pumpkin - #d35400		rgb(211, 84, 0)
+	
+	Alizarin - #e74c3c		rgb(231, 76, 60)
+	Pomegranate - #c0392b	rgb(192, 57, 43)
+
+	Clouds - #ecf0f1		rgb(236, 240, 241)
+	Silver - #bdc3c7		rgb(189, 195, 199)
+
+	Concrete - #95a5a6		rgb(149, 165, 166)
+	Asbestos - #7f8c8d		rgb(127, 140, 141)
+*/
