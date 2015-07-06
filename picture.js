@@ -13,6 +13,6 @@ var pictures = {
 
 function pickPicture(pictureName){
 	image.src = this.pictures[pictureName.value];
-    animate(canvas, context, startTime);
+    animate(canvas);
 
 }

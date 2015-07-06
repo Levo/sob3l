@@ -49,7 +49,7 @@
         MASKY[2][0] = -1; MASKY[2][1] = -2; MASKY[2][2] = -1;
 
 
-        function animate(canvas, context,startTime) {
+        function animate(canvas) {
 
             context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -97,16 +97,10 @@
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext('2d');
 
-        var startTime = (new Date()).getTime();
 
         image.onload = function(){
-            animate(canvas, context, startTime);
-
+            animate(canvas);
         }
-
-        // for (var i = 0; i <= 255; i+=10) {
-        //     console.log("new pixel(0,"+i+", 0)");
-        // };
 
           </script>
 </body>
