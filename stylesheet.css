@@ -2,13 +2,14 @@
 #dropDownListPictures{
 	display: block;
 	top: 25px;
+	left: 75px;
 	position: relative;
 }
 
-#dropDownListPalettes{
-	display: block;
-	top: 25px;
+#license
+{
 	position: relative;
+	display: inline-block;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400);
@@ -29,7 +30,7 @@
 	cursor: pointer;
 	outline: 0;
 	top: 5px;
-	left: 125px;
+	left: px;
 	opacity: 1;
 
 	background-color:#2c3e50;
@@ -44,14 +45,6 @@
 	border-radius: 6px;
 }
 
-#buttons{
-	top: 0px;
-	position: relative;
-	display: inline-block;
-	width: 75px;
-	height: 400px;
-}
-
 .button:active{
 	transition: all 0.1s ease-in-out;
  	-ms-transform: scale(0.80,0.80); 
@@ -60,6 +53,19 @@
 }
 .button:hover{
 	background-color: rgba(231, 76, 60, 0.8);
+}
+#threshold{
+	position: relative;
+	display: inline-block;
+	top: 75px;
+
+}
+
+#container{
+	width: 500px;
+	height: 500px;
+	position: relative;
+	display: inline-block;
 }
 
 /*

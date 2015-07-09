@@ -7,24 +7,35 @@
     <body>
         <canvas id="myCanvas" width="640" height="640" style="background-color:FFFFF; "></canvas>
 
+        <div id="container">
+            <select id="dropDownListPictures" onchange="pickPicture(this)">
+              <option value="david">david</option>
+              <option value="bird">bird</option>
+              <option value="spacex1">Spacex 1</option>
+              <option value="spacex2">Spacex 2</option>
+              <option value="spacex3">Spacex 3</option>
+              <option value="spacex4">Spacex 4</option>
+              <option value="spacex5">Spacex 5</option>
+              <option value="valve">valve</option>
+            </select>
 
-        <select id="dropDownListPictures" onchange="pickPicture(this)">
-          <option value="chicago2">Chicago 2</option>
-          <option value="chicago1">Chicago 1</option>
-          <option value="david">david</option>
-          <option value="sanfran">sanfran</option>
-          <option value="bird">bird</option>
-          <option value="spacex1">Spacex 1</option>
-          <option value="spacex2">Spacex 2</option>
-          <option value="spacex3">Spacex 3</option>
-          <option value="spacex4">Spacex 4</option>
-          <option value="spacex5">Spacex 5</option>
-        </select>
 
-        <button class="button"  onclick="Sob3l()">Edge Detection</button>
+            <div class="inputFieldDiv" id="threshold">
+                Threshold: <input type="number" value="0" class="inputField">
+            </div>
 
+            <button class="button"  onclick="Sob3l()">Edge Detection</button>
+
+
+        </div>
+
+        <div id="license">
+            "<a href="https://commons.wikimedia.org/wiki/File:Valve_original_(1).PNG#/media/File:Valve_original_(1).PNG">Valve original (1)</a>" by <a href="//en.wikipedia.org/wiki/User:Simpsons_contributor" class="extiw" title="en:User:Simpsons contributor">Simpsons contributor</a>. Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a> via <a href="https://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.
+        </div>
         <script>
 
+
+        var THRESHOLD = 0;
 
         var MASKX = [];
         var MASKY = [];
@@ -91,7 +102,7 @@
 
 
         var image = new Image();
-        image.src = "chicago_2.jpg";
+        image.src = "valve.png";
 
 
         var canvas = document.getElementById('myCanvas');

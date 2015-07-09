@@ -1,6 +1,6 @@
 function Sob3l(){
 
-	var threshold =  100;
+	var threshold =  document.getElementById("threshold").childNodes[1].value;
 
 	context.clearRect(0, 0, canvas.width, canvas.height);
 
